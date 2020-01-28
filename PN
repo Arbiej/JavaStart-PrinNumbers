@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class PrintNumbers {
+    static final int EXIT = 0;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+
+            System.out.println("Type the first number");
+            int start = scanner.nextInt();
+            System.out.println("Type second number");
+            int end = scanner.nextInt();
+
+            printNumbers(start, end);
+            System.out.println("If you want to exit type " + EXIT);
+
+
+        } while (scanner.nextInt() != EXIT);
+        scanner.close();
+    }
+
+    private static void printNumbers(int start, int end) {
+        for (int i = start; i <= end; i++) {
+            System.out.print(i + ", ");
+        }
+        System.out.println();
+    }
+}
